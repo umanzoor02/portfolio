@@ -15,7 +15,7 @@ Open http://localhost:3000.
 
 All text lives in [`src/data/profile.ts`](src/data/profile.ts): bio, services, stats, experience, projects, skills and links. To replace the resume, swap `public/Usama-Manzoor-Resume.pdf`.
 
-**Profile photo:** save your photo as `public/images/profile.jpg` (portrait, roughly 4:5, at least 700px wide). The hero shows it automatically on the next build; until then it shows a monogram card.
+**Profile photo:** the hero portrait is `public/images/profile.webp`, a square image cropped to a circle with a transparent background. Replace it with the same name and format to update it.
 
 ## Deploy to Vercel
 

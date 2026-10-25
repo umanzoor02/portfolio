@@ -45,8 +45,8 @@ export const profile = {
   email: "usamamanzoor0260@gmail.com",
   availability: "Available for new projects",
   resume: "/Usama-Manzoor-Resume.pdf",
-  // Drop a square-ish photo at public/images/profile.jpg and it appears in the hero.
-  photo: "/images/profile.jpg",
+  // Circular portrait with a transparent background, shown once in the hero.
+  photo: "/images/profile.webp",
   socials: {
     github: "https://github.com/umanzoor02",
     linkedin: "https://www.linkedin.com/in/usamamanzoor02/",

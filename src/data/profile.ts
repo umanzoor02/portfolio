@@ -55,7 +55,7 @@ export const profile = {
 
 export const stats: { value: string; label: string }[] = [
   { value: "9+", label: "Projects built" },
-  { value: "3", label: "Product teams" },
+  { value: "4", label: "Core services" },
   { value: "15+", label: "Technologies" },
 ];
 
@@ -109,17 +109,6 @@ export const experience: Experience[] = [
       "Built and maintained Django applications across models, views and REST APIs.",
       "Delivered DocuSign embedded signing on a client's owner-facing site so users sign documents without leaving the app.",
       "Owned backend logic, database models and third-party API integrations on live client projects.",
-    ],
-  },
-  {
-    company: "Motive",
-    role: "Machine Learning Data Annotator",
-    period: "Nov 2025 – May 2026",
-    location: "Lahore",
-    stack: ["Computer Vision", "Data Labeling", "QA"],
-    points: [
-      "Produced training data for computer vision models using bounding boxes, segmentation and classification.",
-      "Reviewed and corrected annotations to keep datasets accurate and consistent for model training.",
     ],
   },
 ];

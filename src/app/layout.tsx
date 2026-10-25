@@ -1,12 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist_Mono, Urbanist } from "next/font/google";
 import { Header } from "@/components/header";
 import { profile } from "@/data/profile";
 import { siteUrl } from "@/lib/site";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const urbanist = Urbanist({
+  variable: "--font-urbanist",
   subsets: ["latin"],
 });
 
@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 const title = `${profile.name} · ${profile.role}`;
 const description =
-  "Full-stack Software Engineer in Lahore building with Python, Django, Next.js and React. Projects, experience and contact details.";
+  "Full-stack software engineer building fast, secure web applications, REST APIs and AI integrations with Python, Django, Next.js and React. Available for new projects.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -28,12 +28,13 @@ export const metadata: Metadata = {
   creator: profile.name,
   keywords: [
     "Usama Manzoor",
-    "Software Engineer",
-    "Full-stack Developer",
+    "Full-Stack Software Engineer",
+    "Freelance Web Developer",
     "Django Developer",
     "Next.js Developer",
-    "React",
-    "Python",
+    "React Developer",
+    "Python Developer",
+    "AI Integration",
     "Lahore",
   ],
   alternates: { canonical: "/" },
@@ -52,10 +53,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#fafaf9" },
-    { media: "(prefers-color-scheme: dark)", color: "#0c0a09" },
-  ],
+  themeColor: "#111312",
 };
 
 const jsonLd = {
@@ -73,22 +71,24 @@ const jsonLd = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+    <html lang="en" className={`${urbanist.variable} ${geistMono.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col font-sans">
         <a
           href="#main"
-          className="sr-only z-50 rounded-md bg-accent px-4 py-2 text-accent-foreground focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+          className="sr-only z-50 rounded-full bg-mint px-4 py-2 font-semibold text-mint-ink focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
         >
           Skip to content
         </a>
         <Header />
-        <main id="main" className="mx-auto w-full max-w-5xl flex-1 px-4 sm:px-6">
+        <main id="main" className="flex-1">
           {children}
         </main>
-        <footer className="border-t border-line">
-          <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-2 px-4 py-8 text-sm text-muted sm:flex-row sm:px-6">
-            <p>{profile.name}</p>
-            <p>Built with Next.js and Tailwind CSS · Deployed on Vercel</p>
+        <footer className="border-t border-ink-line bg-ink text-ink-muted">
+          <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-4 py-8 text-sm sm:flex-row sm:px-6">
+            <p className="flex items-center gap-2 font-semibold text-white">
+              <Logo /> {profile.name}
+            </p>
+            <p>{profile.role} · Lahore, Pakistan</p>
           </div>
         </footer>
         <script
@@ -97,5 +97,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         />
       </body>
     </html>
+  );
+}
+
+function Logo() {
+  return (
+    <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-mint text-xs font-bold text-mint-ink">
+      U
+    </span>
   );
 }

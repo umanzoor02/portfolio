@@ -1,38 +1,37 @@
 @import "tailwindcss";
 
+/* Fixed two-tone palette: dark ink sections alternate with light paper sections,
+   tied together by a mint accent. */
 :root {
-  --background: #fafaf9;
-  --foreground: #1c1917;
-  --muted: #57534e;
-  --surface: #ffffff;
-  --line: #e7e5e4;
-  --accent: #0f766e;
-  --accent-foreground: #ffffff;
+  --ink: #111312;
+  --ink-raised: #1b1e1c;
+  --ink-line: rgb(255 255 255 / 0.09);
+  --ink-muted: #a1a9a4;
+  --paper: #ffffff;
+  --paper-soft: #f3f6f4;
+  --paper-line: #e3e9e5;
+  --paper-muted: #5a635d;
+  --text: #131614;
+  --mint: #8ee3b4;
+  --mint-strong: #5fd394;
+  --mint-ink: #0b2a1a;
   color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0c0a09;
-    --foreground: #f5f5f4;
-    --muted: #a8a29e;
-    --surface: #1c1917;
-    --line: #292524;
-    --accent: #2dd4bf;
-    --accent-foreground: #042f2e;
-    color-scheme: dark;
-  }
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-muted: var(--muted);
-  --color-surface: var(--surface);
-  --color-line: var(--line);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --font-sans: var(--font-geist-sans);
+  --color-ink: var(--ink);
+  --color-ink-raised: var(--ink-raised);
+  --color-ink-line: var(--ink-line);
+  --color-ink-muted: var(--ink-muted);
+  --color-paper: var(--paper);
+  --color-paper-soft: var(--paper-soft);
+  --color-paper-line: var(--paper-line);
+  --color-paper-muted: var(--paper-muted);
+  --color-text: var(--text);
+  --color-mint: var(--mint);
+  --color-mint-strong: var(--mint-strong);
+  --color-mint-ink: var(--mint-ink);
+  --font-sans: var(--font-urbanist);
   --font-mono: var(--font-geist-mono);
 }
 
@@ -47,16 +46,17 @@ html {
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--ink);
+  color: var(--text);
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--accent) 25%, transparent);
+  background: var(--mint);
+  color: var(--mint-ink);
 }
 
 :focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--mint-strong);
   outline-offset: 3px;
-  border-radius: 4px;
+  border-radius: 6px;
 }

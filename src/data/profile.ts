@@ -129,7 +129,7 @@ export const projects: Project[] = [
     stack: ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "Tailwind CSS", "Vercel"],
     status: "In active development",
     featured: true,
-    links: [],
+    links: [{ label: "Live site", href: "https://build-clan.vercel.app/" }],
   },
   {
     slug: "nurtureai",

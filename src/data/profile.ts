@@ -119,11 +119,12 @@ export const projects: Project[] = [
     name: "Build Clan",
     tagline: "Social accountability platform for reaching goals together",
     description:
-      "Users pick a goal, follow a structured step-by-step plan, upload proof of progress and get support from a community on the same path. Admins review evidence, and approved steps award points and move the goal forward.",
+      "Users pick a goal, follow a structured step-by-step plan, upload proof of progress and get support from a community on the same path. Members working toward the same goal review each other's evidence, and approved steps award points and move the goal forward.",
     highlights: [
       "Points, progress and goal completion run in Postgres triggers, and row-level security means users can never edit their own scores.",
       "Evidence photos are compressed in the browser to about 200 KB, stored privately and served through expiring signed URLs.",
-      "Community feed, notifications, profiles and a full admin console for evidence review, goal plans and reports.",
+      "Peer review: people pursuing the same goal verify each other's proof, keeping progress honest without a central bottleneck.",
+      "Community feed, notifications and profiles that keep members motivated and accountable.",
       "Google and email sign-in, with Server Actions handling every change.",
     ],
     stack: ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "Tailwind CSS", "Vercel"],

@@ -116,7 +116,7 @@ export const experience: Experience[] = [
 export const projects: Project[] = [
   {
     slug: "clan",
-    name: "Clan",
+    name: "Build Clan",
     tagline: "Social accountability platform for reaching goals together",
     description:
       "Users pick a goal, follow a structured step-by-step plan, upload proof of progress and get support from a community on the same path. Admins review evidence, and approved steps award points and move the goal forward.",

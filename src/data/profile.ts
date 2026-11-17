@@ -150,6 +150,23 @@ export const projects: Project[] = [
     links: [{ label: "Live site", href: "https://nurture-nani-parent.vercel.app/" }],
   },
   {
+    slug: "farehunter",
+    name: "FareHunter",
+    tagline: "AI agent that watches flight prices and books when the fare is right",
+    description:
+      "Users create a price watch for a route, such as Lahore to Dubai on a set date under a target price. An AI agent checks fares on a schedule and books automatically when the price drops below target and every safety check passes, using Duffel's test mode so no real money moves.",
+    highlights: [
+      "Hand-written tool-calling agent running on a local LLM (Qwen3 via Ollama), with every step saved and viewable.",
+      "MCP server that exposes flight search, price watches, price history and booking as tools to the agent or any MCP host.",
+      "Skills loaded only when needed: a fare-judge skill scores fares against price history, and a booking-safety skill walks through the checklist.",
+      "Hard safety rules in code, not prompts: price, currency, expiry, date, daily-cap and human-confirmation checks run before any booking, on both the agent and the API.",
+      "Django REST API with Celery and Redis scheduling, Postgres, and a React + TypeScript dashboard.",
+    ],
+    stack: ["Python", "Django REST Framework", "MCP", "AI Agents", "Ollama", "Celery", "PostgreSQL", "React"],
+    featured: true,
+    links: [],
+  },
+  {
     slug: "job-hunter",
     name: "Job Hunter",
     tagline: "Automated job search and application assistant",
@@ -194,7 +211,6 @@ export const projects: Project[] = [
       "A custom machine learning model analyzes user-provided data to flag early signs of anxiety disorders.",
     ],
     stack: ["Python", "Django", "React", "REST API", "Machine Learning"],
-    featured: true,
     links: [{ label: "Source", href: "https://github.com/umanzoor02/nurture-project" }],
   },
   {

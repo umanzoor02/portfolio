@@ -54,7 +54,7 @@ export const profile = {
 } as const;
 
 export const stats: { value: string; label: string }[] = [
-  { value: "9+", label: "Projects built" },
+  { value: "12+", label: "Projects built" },
   { value: "4", label: "Core services" },
   { value: "15+", label: "Technologies" },
 ];
@@ -117,20 +117,71 @@ export const projects: Project[] = [
   {
     slug: "clan",
     name: "Build Clan",
-    tagline: "Social accountability platform for reaching goals together",
+    tagline: "Social goal-tracking app that turns goals into action, together",
     description:
-      "Users pick a goal, follow a structured step-by-step plan, upload proof of progress and get support from a community on the same path. Members working toward the same goal review each other's evidence, and approved steps award points and move the goal forward.",
+      "Members pick from 15 research-based goal plans, such as landing a job, learning a skill, fixing their sleep or building savings. Each plan is broken into milestones and small steps. When members finish a step, they reflect on what they did, what got in the way and how they got past it, and their journey is shared in a community feed where others like, comment, follow and help.",
     highlights: [
-      "Points, progress and goal completion run in Postgres triggers, and row-level security means users can never edit their own scores.",
-      "Evidence photos are compressed in the browser to about 200 KB, stored privately and served through expiring signed URLs.",
-      "Peer review: people pursuing the same goal verify each other's proof, keeping progress honest without a central bottleneck.",
-      "Community feed, notifications and profiles that keep members motivated and accountable.",
-      "Google and email sign-in, with Server Actions handling every change.",
+      "Structured goal plans with milestones, steps, points and progress tracking.",
+      "\"Ask for help\" on any step alerts other members working on the same goal.",
+      "Real-time social feed with live likes, comments and a new-posts alert.",
+      "Private messaging with online status, typing indicators and read receipts, plus live notifications, search, profiles and followers.",
+      "Security reviewed: row-level security on every table, rate limits, private photo storage and security headers.",
+      "Google sign-in, admin panel for goals, reports and feedback, and a responsive monochrome design.",
     ],
-    stack: ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "Tailwind CSS", "Vercel"],
-    status: "In active development",
+    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL", "Realtime", "Vercel"],
     featured: true,
     links: [{ label: "Live site", href: "https://build-clan.vercel.app/" }],
+  },
+  {
+    slug: "nurturenani",
+    name: "NurtureNani",
+    tagline: "Parenting companion for first-time parents: a wise Nani in your pocket",
+    description:
+      "Everyday baby and child care from newborn to 5 years, based on WHO and AAP guidance. Built as a monorepo with a parent app, a doctor consultation app and a governance console where clinical and legal reviewers approve content before parents see it.",
+    highlights: [
+      "Parent app with symptom checks, care guides, feeding plans, milestones and vaccine schedules, with red flags, first aid and emergency numbers that work offline.",
+      "Triage engine that stores symptom guides as data and gates releases on a red-flag test suite.",
+      "NestJS API with password plus mandatory two-factor sign-in, role-based access and an append-only, hash-chained audit log.",
+      "Next.js console for admins, clinical reviewers, consulting doctors and per-country legal reviewers.",
+    ],
+    stack: ["TypeScript", "React Native (Expo)", "Next.js", "NestJS", "PostgreSQL", "Monorepo"],
+    status: "In active development",
+    featured: true,
+    links: [{ label: "Live site", href: "https://nurture-nani-parent.vercel.app/" }],
+  },
+  {
+    slug: "job-hunter",
+    name: "Job Hunter",
+    tagline: "Automated job search and application assistant",
+    description:
+      "A Python automation tool that runs every morning: it collects about 1,500 job listings a day from 10+ sources, ranks them against a candidate profile and applies by email or by filling in online application forms in a real browser.",
+    highlights: [
+      "Pulls from job boards, company career pages on Greenhouse, Lever, Ashby and Workable, Hacker News, and LinkedIn and Indeed alert emails.",
+      "Scores each job against skills, seniority and location (local, remote or visa-sponsored abroad).",
+      "Sends tailored email applications, or uses Playwright to upload the resume, fill each field from truthful answer rules and submit, handing the form to a person only when a CAPTCHA appears.",
+      "A local LLM (Qwen3 via Ollama) screens out jobs with unmet requirements, and rule-based checks confirm every reason against the ad so the model can't invent blockers.",
+      "Progress dashboard with daily charts, plus a summary email after every run.",
+    ],
+    stack: ["Python", "Playwright", "Web Scraping", "SQLite", "Ollama", "LLM Integration", "Automation"],
+    featured: true,
+    links: [],
+  },
+  {
+    slug: "desi-cravings",
+    name: "Desi Cravings",
+    tagline: "Storefront redesign concept for a Lahore home-food brand",
+    description:
+      "A design concept pitched to a homemade achar and masala brand: a premium, handmade feel in place of a generic theme, with the founder's story up front and ordering built around how the store actually sells.",
+    highlights: [
+      "Custom design system with hand-written CSS, responsive from phone to desktop.",
+      "Catalogue of 18 products in 5 categories, with product, category and shop pages.",
+      "Cart, checkout and order tracking, with WhatsApp ordering and 50% advance plus cash-on-delivery payment.",
+      "Founder story, how-to-order steps and an FAQ on delivery and payments.",
+    ],
+    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    status: "Design concept",
+    featured: true,
+    links: [{ label: "Live site", href: "https://desi-cravings-concept.vercel.app/" }],
   },
   {
     slug: "nurtureai",
@@ -157,7 +208,6 @@ export const projects: Project[] = [
       "React dashboard talks to the API over REST with session cookies.",
     ],
     stack: ["Django", "React", "Gmail API", "OAuth2", "LLM Agents"],
-    featured: true,
     links: [{ label: "Source", href: "https://github.com/umanzoor02/emailAgent" }],
   },
   {
